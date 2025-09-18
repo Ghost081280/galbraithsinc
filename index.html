@@ -7,7 +7,7 @@
     <title>Galbraith's Landscaping & Lawn Care | Fort Wayne IN</title>
     
     <!-- PWA Meta Tags -->
-    <meta name="theme-color" content="#22c55e">
+    <meta name="theme-color" content="#2d5a27">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Galbraith's Landscaping">
@@ -20,8 +20,8 @@
     <link rel="apple-touch-icon" href="images/cropped-LawnCareLogoLanding.jpg-2.png">
     
     <!-- Preload critical resources -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -31,44 +31,43 @@
         }
 
         :root {
-            --primary-green: #22c55e;
-            --dark-green: #16a34a;
-            --light-green: #dcfce7;
-            --earth-brown: #8b4513;
-            --dark-gray: #1f2937;
-            --light-gray: #f9fafb;
-            --text-gray: #6b7280;
+            --primary-green: #2d5a27;
+            --accent-green: #5cb85c;
+            --light-green: #f0f8f0;
+            --gold: #d4af37;
+            --dark-text: #2c3e50;
+            --gray-text: #6c757d;
+            --light-gray: #f8f9fa;
             --white: #ffffff;
-            --shadow: 0 10px 25px rgba(0,0,0,0.1);
-            --shadow-lg: 0 20px 40px rgba(0,0,0,0.15);
+            --shadow: 0 4px 15px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 30px rgba(0,0,0,0.15);
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             line-height: 1.6;
-            color: var(--dark-gray);
+            color: var(--dark-text);
             overflow-x: hidden;
         }
 
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 0;
-            transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .navbar.scrolled {
-            background: rgba(255, 255, 255, 0.98);
+        /* Header Section */
+        .header {
+            background: var(--white);
+            padding: 20px 0;
             box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
         }
 
-        .nav-container {
+        .header.scrolled {
+            padding: 10px 0;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .header-container {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
@@ -77,36 +76,118 @@
             padding: 0 2rem;
         }
 
-        .logo {
+        .logo-section {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-green);
-            text-decoration: none;
+            gap: 15px;
         }
 
-        .logo img {
-            height: 40px;
+        .logo-section img {
+            height: 80px;
             width: auto;
+            transition: height 0.3s ease;
+        }
+
+        .header.scrolled .logo-section img {
+            height: 60px;
+        }
+
+        .company-info h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+
+        .company-info .tagline {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-item .label {
+            font-size: 0.75rem;
+            color: var(--gray-text);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
+        }
+
+        .contact-item .value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-green);
+        }
+
+        .cta-header {
+            background: var(--primary-green);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .cta-header:hover {
+            background: var(--accent-green);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Navigation */
+        .navigation {
+            background: var(--primary-green);
+            padding: 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu li {
+            position: relative;
         }
 
         .nav-menu a {
+            display: block;
+            color: white;
             text-decoration: none;
-            color: var(--dark-gray);
+            padding: 18px 25px;
             font-weight: 500;
-            transition: color 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
         }
 
         .nav-menu a:hover {
-            color: var(--primary-green);
+            background: rgba(255,255,255,0.1);
+            color: var(--gold);
         }
 
         .menu-toggle {
@@ -114,81 +195,75 @@
             flex-direction: column;
             cursor: pointer;
             gap: 4px;
+            padding: 10px;
         }
 
         .menu-toggle span {
             width: 25px;
             height: 3px;
-            background: var(--dark-gray);
+            background: var(--primary-green);
             transition: all 0.3s ease;
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            background: linear-gradient(rgba(45, 90, 39, 0.7), rgba(45, 90, 39, 0.7)), url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
             position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
-            opacity: 0.2;
+            margin-top: 140px;
         }
 
         .hero-content {
             max-width: 800px;
             padding: 0 2rem;
-            position: relative;
-            z-index: 2;
         }
 
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 1rem;
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 6vw, 5rem);
+            margin-bottom: 1.5rem;
             font-weight: 700;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
         }
 
         .hero p {
-            font-size: clamp(1.1rem, 2vw, 1.3rem);
-            margin-bottom: 2rem;
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+            margin-bottom: 2.5rem;
             opacity: 0.95;
+            font-weight: 300;
         }
 
-        .cta-button {
+        .hero-cta {
             display: inline-block;
-            background: var(--white);
+            background: var(--gold);
             color: var(--primary-green);
-            padding: 1rem 2rem;
+            padding: 18px 35px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
+            font-weight: 700;
+            font-size: 1.2rem;
             transition: all 0.3s ease;
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-lg);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
+        .hero-cta:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
         }
 
         /* Services Section */
         .services {
-            padding: 6rem 0;
-            background: var(--light-gray);
+            padding: 100px 0;
+            background: var(--white);
         }
 
         .container {
@@ -197,124 +272,130 @@
             padding: 0 2rem;
         }
 
-        .section-title {
+        .section-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 80px;
         }
 
-        .section-title h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 1rem;
-            color: var(--dark-gray);
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            font-weight: 600;
         }
 
-        .section-title p {
-            font-size: 1.2rem;
-            color: var(--text-gray);
-            max-width: 600px;
+        .section-header p {
+            font-size: 1.3rem;
+            color: var(--gray-text);
+            max-width: 700px;
             margin: 0 auto;
+            line-height: 1.7;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
         }
 
         .service-card {
             background: white;
-            border-radius: 20px;
-            padding: 2rem;
+            border-radius: 15px;
+            overflow: hidden;
             box-shadow: var(--shadow);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(45, 90, 39, 0.1);
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
             box-shadow: var(--shadow-lg);
         }
 
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--light-green);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
+        .service-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
         }
 
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark-gray);
+        .service-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent, rgba(45, 90, 39, 0.8));
         }
 
-        .service-card p {
-            color: var(--text-gray);
-            line-height: 1.7;
+        .service-content {
+            padding: 30px;
         }
 
-        /* About Section */
-        .about {
-            padding: 6rem 0;
-            background: white;
+        .service-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+            font-weight: 600;
         }
 
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-content h2 {
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            margin-bottom: 1.5rem;
-            color: var(--dark-gray);
-        }
-
-        .about-content p {
-            color: var(--text-gray);
-            font-size: 1.1rem;
+        .service-content p {
+            color: var(--gray-text);
             line-height: 1.8;
-            margin-bottom: 1.5rem;
+            font-size: 1rem;
         }
 
-        .about-image {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
+        /* Quality Section */
+        .quality-section {
+            padding: 100px 0;
+            background: var(--light-green);
         }
 
-        .about-image img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
+        .quality-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quality-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--primary-green);
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .quality-content p {
+            font-size: 1.3rem;
+            color: var(--gray-text);
+            line-height: 1.8;
+            margin-bottom: 40px;
         }
 
         /* Testimonials */
         .testimonials {
-            padding: 6rem 0;
-            background: var(--light-gray);
+            padding: 100px 0;
+            background: var(--white);
         }
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
         }
 
         .testimonial {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow);
+            background: var(--light-gray);
+            padding: 40px;
+            border-radius: 15px;
             position: relative;
+            border-left: 5px solid var(--primary-green);
+            box-shadow: var(--shadow);
         }
 
         .testimonial::before {
@@ -322,65 +403,82 @@
             font-size: 4rem;
             color: var(--primary-green);
             position: absolute;
-            top: -10px;
+            top: 10px;
             left: 20px;
             font-family: Georgia, serif;
+            opacity: 0.3;
         }
 
-        .testimonial p {
-            margin-bottom: 1rem;
-            color: var(--text-gray);
+        .testimonial-content {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--dark-text);
+            margin-bottom: 20px;
             font-style: italic;
         }
 
         .testimonial-author {
             font-weight: 600;
-            color: var(--dark-gray);
+            color: var(--primary-green);
+            font-size: 1rem;
         }
 
         /* Contact Section */
         .contact {
-            padding: 6rem 0;
-            background: var(--dark-gray);
+            padding: 100px 0;
+            background: var(--primary-green);
             color: white;
             text-align: center;
         }
 
         .contact h2 {
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 20px;
+            font-weight: 600;
         }
 
         .contact p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             opacity: 0.9;
-            margin-bottom: 2rem;
+            margin-bottom: 50px;
         }
 
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
         }
 
-        .contact-item {
-            text-align: center;
+        .contact-info-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
         }
 
-        .contact-item h4 {
-            margin-bottom: 0.5rem;
-            color: var(--primary-green);
+        .contact-info-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--gold);
+        }
+
+        .contact-info-card p {
+            font-size: 1.1rem;
+            margin: 0;
         }
 
         /* Footer */
         .footer {
-            background: var(--dark-gray);
+            background: var(--dark-text);
             color: white;
             text-align: center;
-            padding: 2rem 0;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 40px 0;
+        }
+
+        .footer p {
+            opacity: 0.8;
         }
 
         /* Install Button */
@@ -409,6 +507,27 @@
 
         /* Mobile Styles */
         @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+                padding: 0 1rem;
+            }
+
+            .header-contact {
+                flex-wrap: wrap;
+                gap: 15px;
+                justify-content: center;
+            }
+
+            .company-info h1 {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+
+            .logo-section img {
+                height: 60px;
+            }
+
             .nav-menu {
                 position: fixed;
                 top: 100%;
@@ -416,69 +535,59 @@
                 width: 100%;
                 height: 0;
                 overflow: hidden;
-                background: white;
+                background: var(--primary-green);
                 flex-direction: column;
-                align-items: center;
-                justify-content: center;
                 transition: all 0.3s ease;
-                box-shadow: var(--shadow);
             }
 
             .nav-menu.active {
-                height: 300px;
-                top: 70px;
+                height: auto;
+                top: 200px;
+            }
+
+            .nav-menu a {
+                padding: 20px;
+                text-align: center;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
             }
 
             .menu-toggle {
                 display: flex;
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
             }
 
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-
-            .hero-content {
-                padding: 0 1rem;
+            .hero {
+                margin-top: 200px;
+                height: 70vh;
             }
 
             .services-grid {
                 grid-template-columns: 1fr;
             }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 480px) {
-            .nav-container {
+            .header-container {
                 padding: 0 1rem;
             }
             
             .container {
                 padding: 0 1rem;
             }
-        }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            .service-card {
+                margin: 0 10px;
             }
         }
 
-        .fade-in {
-            animation: fadeInUp 0.6s ease forwards;
-        }
-
-        /* Loading Spinner */
+        /* Loading Screen */
         .loading {
             position: fixed;
             top: 0;
@@ -505,6 +614,18 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -513,17 +634,37 @@
         <div class="spinner"></div>
     </div>
 
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="images/cropped-LawnCareLogoLanding.jpg-2.png" alt="Galbraith's Landscaping Logo">
+                <div class="company-info">
+                    <h1>Galbraith's Landscaping & Lawn Care</h1>
+                    <div class="tagline">Fort Wayne, IN & Auburn, IN</div>
+                </div>
+            </div>
+            <div class="header-contact">
+                <div class="contact-item">
+                    <div class="label">Call Us Today</div>
+                    <div class="value">(260) 555-0123</div>
+                </div>
+                <div class="contact-item">
+                    <div class="label">Service Areas</div>
+                    <div class="value">Fort Wayne & Auburn</div>
+                </div>
+                <a href="#contact" class="cta-header">Free Estimate</a>
+            </div>
+        </div>
+    </header>
+
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
+    <nav class="navigation">
         <div class="nav-container">
-            <a href="#" class="logo">
-                <img src="images/cropped-LawnCareLogoLanding.jpg-2.png" alt="Galbraith's Logo">
-                Galbraith's
-            </a>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#about">About Us</a></li>
                 <li><a href="#testimonials">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -538,52 +679,45 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Quality That You Can Count On</h1>
-            <p>Professional landscaping & lawn care services in Fort Wayne, IN. We create and maintain beautiful outdoor spaces with care and attention to detail.</p>
-            <a href="#contact" class="cta-button">Get Free Estimate</a>
+            <h2>Quality That You Can Count On</h2>
+            <p>We offer a wide range of landscaping & lawn care services in Fort Wayne, IN that both create and maintain beautiful and comfortable atmosphere in your yard.</p>
+            <a href="#contact" class="hero-cta">Get Started Today</a>
         </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <div class="section-title">
+            <div class="section-header">
                 <h2>Exceptional Services We Offer</h2>
-                <p>We offer a wide range of landscaping & lawn care services that create and maintain beautiful and comfortable outdoor spaces.</p>
+                <p>Our experts work with your plants & lawn with care and attention, delivering professional results you can trust.</p>
             </div>
             <div class="services-grid">
                 <div class="service-card fade-in">
-                    <div class="service-icon">🌿</div>
-                    <h3>Landscape Design & Installation</h3>
-                    <p>With our in-depth expertise and extensive experience of designing and installing thousands of projects, we know what it takes to create a beautiful and low-maintenance landscape that will maximize the potential of any property.</p>
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="service-content">
+                        <h3>Landscape Design & Installation</h3>
+                        <p>With our in-depth expertise and extensive experience of designing and installing thousands of projects, we know what it takes to create a beautiful and low-maintenance landscape that will maximize the potential of any property.</p>
+                    </div>
                 </div>
                 <div class="service-card fade-in">
-                    <div class="service-icon">🌱</div>
-                    <h3>Lawn Care & Maintenance</h3>
-                    <p>At Galbraith's, we believe in delivering superior results by providing exceptional service. We use top shelf lawn care products and train our friendly technicians to exceed industry standards.</p>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">✂️</div>
-                    <h3>Professional Trimming</h3>
-                    <p>Our expert team provides professional trimming and pruning services to keep your landscape looking its best year-round. We work with your plants with care and attention.</p>
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="service-content">
+                        <h3>Lawn Care & Maintenance Services</h3>
+                        <p>At Galbraith's, we believe in delivering superior results by providing exceptional service. We use top shelf lawn care products and train our friendly technicians to exceed industry standards. Finally, we follow a detailed six-step process to ensure consistent and reliable results.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- Quality Section -->
+    <section class="quality-section">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-content">
-                    <h2>Enjoy Knowing Your Lawn And Landscape Are In Great Hands</h2>
-                    <p>Relax and let the professionals take care of your lawn! We make it a stress-free experience from the moment you call to your first treatment.</p>
-                    <p>Our experts work with your plants & lawn with care and attention, ensuring beautiful and comfortable atmosphere in your yard.</p>
-                    <a href="#contact" class="cta-button">Learn More</a>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Professional landscaping work">
-                </div>
+            <div class="quality-content">
+                <h2>Enjoy Knowing Your Lawn And Landscape Are In Great Hands</h2>
+                <p>Relax and let the professionals take care of your lawn! We make it a stress-free experience from the moment you call to your first treatment.</p>
+                <a href="#contact" class="hero-cta">Schedule Service</a>
             </div>
         </div>
     </section>
@@ -591,21 +725,27 @@
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
         <div class="container">
-            <div class="section-title">
+            <div class="section-header">
                 <h2>Real Customers, Real Reviews</h2>
-                <p>See what our satisfied customers have to say about our services.</p>
+                <p>See what our satisfied customers have to say about our exceptional service and results.</p>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial fade-in">
-                    <p>Excellent service and attention to detail. My lawn has never looked better!</p>
+                    <div class="testimonial-content">
+                        Excellent service and attention to detail. My lawn has never looked better! The team is professional and reliable.
+                    </div>
                     <div class="testimonial-author">- Dane L.</div>
                 </div>
                 <div class="testimonial fade-in">
-                    <p>Professional team that delivers on their promises. Highly recommend!</p>
+                    <div class="testimonial-content">
+                        Professional team that delivers on their promises. They transformed our landscape beautifully and maintained it perfectly.
+                    </div>
                     <div class="testimonial-author">- C. Warner</div>
                 </div>
                 <div class="testimonial fade-in">
-                    <p>Outstanding landscaping work. They transformed our backyard beautifully.</p>
+                    <div class="testimonial-content">
+                        Outstanding landscaping work. They transformed our backyard into an amazing outdoor space that we love spending time in.
+                    </div>
                     <div class="testimonial-author">- Stephen K.</div>
                 </div>
             </div>
@@ -617,20 +757,21 @@
         <div class="container">
             <h2>Ready to Get Started?</h2>
             <p>Contact us today for your free estimate and let us transform your outdoor space!</p>
-            <div class="contact-info">
-                <div class="contact-item">
+            <div class="contact-grid">
+                <div class="contact-info-card">
                     <h4>Phone</h4>
                     <p>(260) 555-0123</p>
                 </div>
-                <div class="contact-item">
+                <div class="contact-info-card">
                     <h4>Email</h4>
                     <p>info@galbraithsinc.com</p>
                 </div>
-                <div class="contact-item">
-                    <h4>Service Area</h4>
+                <div class="contact-info-card">
+                    <h4>Service Areas</h4>
                     <p>Fort Wayne, IN & Auburn, IN</p>
                 </div>
             </div>
+            <a href="tel:+12605550123" class="hero-cta">Call Now</a>
         </div>
     </section>
 
@@ -655,7 +796,7 @@
             "start_url": "/",
             "display": "standalone",
             "background_color": "#ffffff",
-            "theme_color": "#22c55e",
+            "theme_color": "#2d5a27",
             "orientation": "portrait-primary",
             "icons": [
                 {
@@ -683,13 +824,14 @@
 
         // Service Worker
         const swCode = `
-            const CACHE_NAME = 'galbraiths-v1';
+            const CACHE_NAME = 'galbraiths-v2';
             const urlsToCache = [
                 '/',
                 '/offline.html',
-                'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap',
+                'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap',
                 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-                'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+                'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
             ];
 
             self.addEventListener('install', event => {
@@ -777,7 +919,7 @@
                 setTimeout(() => {
                     document.getElementById('loading').style.display = 'none';
                 }, 500);
-            }, 1000);
+            }, 1200);
         });
 
         // Mobile Menu Toggle
@@ -788,13 +930,13 @@
             navMenu.classList.toggle('active');
         });
 
-        // Navbar Scroll Effect
+        // Header Scroll Effect
         window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 100) {
-                navbar.classList.add('scrolled');
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
             } else {
-                navbar.classList.remove('scrolled');
+                header.classList.remove('scrolled');
             }
         });
 
@@ -804,9 +946,12 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    const headerHeight = document.getElementById('header').offsetHeight + 60;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
                     });
                     navMenu.classList.remove('active');
                 }
@@ -822,16 +967,12 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.classList.add('visible');
                 }
             });
         }, observerOptions);
 
         document.querySelectorAll('.fade-in').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease';
             observer.observe(el);
         });
 
@@ -841,7 +982,8 @@
                 // Preload critical images
                 const criticalImages = [
                     'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-                    'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+                    'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                    'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
                 ];
                 
                 criticalImages.forEach(src => {
