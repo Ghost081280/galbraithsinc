@@ -16,8 +16,8 @@
     <link rel="manifest" id="manifest-placeholder">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <link rel="apple-touch-icon" href="images/logo-192.png">
+    <link rel="icon" type="image/png" href="images/cropped-LawnCareLogoLanding.jpg-2.png">
+    <link rel="apple-touch-icon" href="images/cropped-LawnCareLogoLanding.jpg-2.png">
     
     <!-- Preload critical resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
@@ -78,10 +78,18 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary-green);
             text-decoration: none;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
         }
 
         .nav-menu {
@@ -508,7 +516,10 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">Galbraith's</a>
+            <a href="#" class="logo">
+                <img src="images/cropped-LawnCareLogoLanding.jpg-2.png" alt="Galbraith's Logo">
+                Galbraith's
+            </a>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
@@ -648,13 +659,13 @@
             "orientation": "portrait-primary",
             "icons": [
                 {
-                    "src": "images/logo-192.png",
+                    "src": "images/cropped-LawnCareLogoLanding.jpg-2.png",
                     "sizes": "192x192",
                     "type": "image/png",
                     "purpose": "any maskable"
                 },
                 {
-                    "src": "images/logo-512.png",
+                    "src": "images/cropped-LawnCareLogoLanding.jpg-2.png",
                     "sizes": "512x512",
                     "type": "image/png",
                     "purpose": "any maskable"
