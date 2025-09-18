@@ -267,35 +267,17 @@
             transition: all 0.3s ease;
         }
 
-        /* Hero Section */
+        /* Hero Section - SINGLE CLEAN IMAGE */
         .hero {
-            height: 90vh;
-            background: linear-gradient(rgba(45, 90, 39, 0.8), rgba(45, 90, 39, 0.6)), 
-                        url('http://galbraithsinc.com/wp-content/uploads/2025/03/Main-Page-Slider.webp') center/cover;
+            height: 85vh;
+            background: linear-gradient(rgba(45, 90, 39, 0.6), rgba(45, 90, 39, 0.6)), 
+                        url('http://galbraithsinc.com/wp-content/uploads/2025/03/Main-Page-Slider.webp') center/cover no-repeat fixed;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
             position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('http://galbraithsinc.com/wp-content/uploads/2019/03/parallax01.jpg') center/cover;
-            opacity: 0.3;
-            animation: slideShow 15s infinite;
-        }
-
-        @keyframes slideShow {
-            0%, 33% { background-image: url('http://galbraithsinc.com/wp-content/uploads/2025/03/Main-Page-Slider.webp'); }
-            34%, 66% { background-image: url('http://galbraithsinc.com/wp-content/uploads/2019/03/parallax01.jpg'); }
-            67%, 100% { background-image: url('http://galbraithsinc.com/wp-content/uploads/2019/03/Lawn-Care-Slider.jpg'); }
         }
 
         .hero-content {
