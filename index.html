@@ -50,6 +50,80 @@
             overflow-x: hidden;
         }
 
+        /* Top Info Bar */
+        .top-info {
+            background: var(--primary-green);
+            color: white;
+            padding: 12px 0;
+            font-size: 0.9rem;
+        }
+
+        .top-info-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .hours-info {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .hours-section, .location-section {
+            text-align: left;
+        }
+
+        .hours-section h4, .location-section h4 {
+            color: var(--gold);
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .hours-section p, .location-section p {
+            font-size: 0.8rem;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .top-contact {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .call-section {
+            text-align: right;
+        }
+
+        .call-section h4 {
+            color: var(--gold);
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 2px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .call-section .phone {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        .call-section .phone:hover {
+            color: var(--gold);
+        }
+
         /* Header Section - FIXED POSITIONING */
         .header {
             background: var(--white);
@@ -603,8 +677,169 @@
             }
         }
 
-        /* Mobile Styles */
+        /* Estimate Form Section */
+        .estimate-form {
+            background: var(--gold);
+            padding: 40px 0;
+        }
+
+        .estimate-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .form-intro {
+            color: var(--primary-green);
+        }
+
+        .form-intro h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .form-intro p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        .estimate-form-container {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-text);
+            font-size: 0.9rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--light-gray);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+
+        .submit-btn {
+            background: var(--primary-green);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: var(--accent-green);
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Responsive */
         @media (max-width: 768px) {
+            .top-info-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .hours-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .estimate-container {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .estimate-form-container {
+                padding: 25px 20px;
+            }
+
+            .form-intro {
+                text-align: center;
+            }
+
+            .form-intro h2 {
+                font-size: 1.8rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .top-info-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .hours-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .estimate-container {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .estimate-form-container {
+                padding: 25px 20px;
+            }
+
+            .form-intro {
+                text-align: center;
+            }
+
+            .form-intro h2 {
+                font-size: 1.8rem;
+            }
+
             .header-container {
                 flex-direction: column;
                 gap: 20px;
@@ -922,6 +1157,28 @@
     </style>
 </head>
 <body>
+    <!-- Top Info Bar -->
+    <div class="top-info">
+        <div class="top-info-container">
+            <div class="hours-info">
+                <div class="hours-section">
+                    <h4>Summer Hours</h4>
+                    <p>Mon – Fri: 8AM - 6PM | Sat: 9AM - 5PM | Sun: 10AM - 4PM</p>
+                </div>
+                <div class="location-section">
+                    <h4>Garden Center</h4>
+                    <p>7945 Stellhorn Road, Fort Wayne, IN 46815</p>
+                </div>
+            </div>
+            <div class="top-contact">
+                <div class="call-section">
+                    <h4>Call Us:</h4>
+                    <a href="tel:+12604861587" class="phone">(260) 486-1587</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Loading Screen -->
     <div class="loading" id="loading">
         <div class="loading-container">
@@ -1023,6 +1280,41 @@
             <div class="subtitle">We offer a wide range of landscaping & lawn care services in Fort Wayne, IN that both create and maintain beautiful and comfortable atmosphere in your yard.</div>
             <div class="experience">74 Years of Professional Excellence</div>
             <a href="#contact" class="hero-cta">Get Started Today</a>
+        </div>
+    </section>
+
+    <!-- Estimate Form Section -->
+    <section class="estimate-form">
+        <div class="estimate-container">
+            <div class="form-intro">
+                <h2>Get An Estimate</h2>
+                <p>Fill In The Form & Receive A Free Estimate</p>
+            </div>
+            <div class="estimate-form-container">
+                <form id="estimate-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="submit-btn">Get My Free Estimate</button>
+                </form>
+            </div>
         </div>
     </section>
 
