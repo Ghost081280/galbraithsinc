@@ -1465,8 +1465,6 @@
                 '/offline.html',
                 'https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap',
                 'http://galbraithsinc.com/wp-content/uploads/2025/03/Main-Page-Slider.webp',
-                'http://galbraithsinc.com/wp-content/uploads/2019/03/parallax01.jpg',
-                'http://galbraithsinc.com/wp-content/uploads/2019/03/Lawn-Care-Slider.jpg',
                 'https://galbraithsinc.com/wp-content/uploads/2017/08/home-2.jpg',
                 'https://galbraithsinc.com/wp-content/uploads/2017/08/home-3.jpg'
             ];
@@ -1622,11 +1620,9 @@
         // Performance optimizations
         if ('requestIdleCallback' in window) {
             requestIdleCallback(() => {
-                // Preload critical images
+                // Preload critical images - ONLY the hero image
                 const criticalImages = [
                     'http://galbraithsinc.com/wp-content/uploads/2025/03/Main-Page-Slider.webp',
-                    'http://galbraithsinc.com/wp-content/uploads/2019/03/parallax01.jpg',
-                    'http://galbraithsinc.com/wp-content/uploads/2019/03/Lawn-Care-Slider.jpg',
                     'https://galbraithsinc.com/wp-content/uploads/2017/08/home-2.jpg',
                     'https://galbraithsinc.com/wp-content/uploads/2017/08/home-3.jpg'
                 ];
